@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupos - Lit+</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Lit+</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="biblioteca.html">Minha Biblioteca</a>
+                <a href="explorar.html">Explorar</a>
+                <a href="grupos.html" class="active">Grupos</a>
+                <a href="perfil.html">Meu Perfil</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn">Entrar</a>
+                <a href="cadastro.html" class="btn btn-primary">Cadastrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="grupos-container">
+            <div class="grupos-header">
+                <h2>Grupos de Leitura</h2>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar grupos...">
+                    <button class="btn"><i class="fas fa-search"></i></button>
+                </div>
+                <button class="btn btn-primary criar-grupo"><i class="fas fa-plus"></i> Criar Grupo</button>
+            </div>
+
+            <div class="grupos-tabs">
+                <button class="tab-btn active">Meus Grupos</button>
+                <button class="tab-btn">Descobrir Grupos</button>
+                <button class="tab-btn">Convites</button>
+            </div>
+
+            <div class="grupos-grid">
+                <div class="grupo-card">
+                    <div class="grupo-imagem">
+                        <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?q=80&w=1000&auto=format&fit=crop" alt="Imagem do grupo Clube de Fantasia">
+                    </div>
+                    <div class="grupo-content">
+                        <h3>Clube de Fantasia</h3>
+                        <p class="grupo-descricao">Grupo dedicado à discussão de livros de fantasia. Atualmente estamos lendo "O Nome do Vento" de Patrick Rothfuss.</p>
+                        <div class="grupo-meta">
+                            <span><i class="fas fa-users"></i> 128 membros</span>
+                            <span><i class="fas fa-book"></i> 12 livros discutidos</span>
+                        </div>
+                        <div class="grupo-actions">
+                            <a href="#" class="btn btn-primary">Ver Grupo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grupo-card">
+                    <div class="grupo-imagem">
+                        <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?q=80&w=1000&auto=format&fit=crop" alt="Imagem do grupo Literatura Clássica">
+                    </div>
+                    <div class="grupo-content">
+                        <h3>Literatura Clássica</h3>
+                        <p class="grupo-descricao">Para amantes dos clássicos da literatura mundial. Nosso próximo livro será "Orgulho e Preconceito" de Jane Austen.</p>
+                        <div class="grupo-meta">
+                            <span><i class="fas fa-users"></i> 87 membros</span>
+                            <span><i class="fas fa-book"></i> 23 livros discutidos</span>
+                        </div>
+                        <div class="grupo-actions">
+                            <a href="#" class="btn btn-primary">Ver Grupo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grupo-card">
+                    <div class="grupo-imagem">
+                        <img src="https://images.unsplash.com/photo-1533652475678-a911cee7a24f?q=80&w=1000&auto=format&fit=crop" alt="Imagem do grupo Ficção Científica">
+                    </div>
+                    <div class="grupo-content">
+                        <h3>Ficção Científica</h3>
+                        <p class="grupo-descricao">Explorando mundos futuros e tecnologias através da literatura. Atualmente estamos discutindo "Duna" de Frank Herbert.</p>
+                        <div class="grupo-meta">
+                            <span><i class="fas fa-users"></i> 56 membros</span>
+                            <span><i class="fas fa-book"></i> 9 livros discutidos</span>
+                        </div>
+                        <div class="grupo-actions">
+                            <a href="#" class="btn btn-primary">Ver Grupo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grupo-card">
+                    <div class="grupo-imagem">
+                        <img src="https://images.unsplash.com/photo-1629196914774-407a0f896ef6?q=80&w=1000&auto=format&fit=crop" alt="Imagem do grupo Poesia Contemporânea">
+                    </div>
+                    <div class="grupo-content">
+                        <h3>Poesia Contemporânea</h3>
+                        <p class="grupo-descricao">Discussões sobre poetas contemporâneos e suas obras. Estamos lendo a antologia "Milk and Honey" de Rupi Kaur.</p>
+                        <div class="grupo-meta">
+                            <span><i class="fas fa-users"></i> 42 membros</span>
+                            <span><i class="fas fa-book"></i> 15 livros discutidos</span>
+                        </div>
+                        <div class="grupo-actions">
+                            <a href="#" class="btn btn-primary">Ver Grupo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grupo-card">
+                    <div class="grupo-imagem">
+                        <img src="https://images.unsplash.com/photo-1490633874781-1c63cc424610?q=80&w=1000&auto=format&fit=crop" alt="Imagem do grupo Suspense e Mistério">
+                    </div>
+                    <div class="grupo-content">
+                        <h3>Suspense e Mistério</h3>
+                        <p class="grupo-descricao">Para os amantes de histórias que te prendem do início ao fim. Estamos lendo "O Homem de Giz" de C.J. Tudor.</p>
+                        <div class="grupo-meta">
+                            <span><i class="fas fa-users"></i> 63 membros</span>
+                            <span><i class="fas fa-book"></i> 11 livros discutidos</span>
+                        </div>
+                        <div class="grupo-actions">
+                            <a href="#" class="btn btn-primary">Ver Grupo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grupo-card">
+                    <div class="grupo-imagem">
+                        <img src="https://images.unsplash.com/photo-1515098506762-79e1384e9d8e?q=80&w=1000&auto=format&fit=crop" alt="Imagem do grupo Literatura Brasileira">
+                    </div>
+                    <div class="grupo-content">
+                        <h3>Literatura Brasileira</h3>
+                        <p class="grupo-descricao">Grupo para discussão de obras da literatura brasileira. Estamos lendo "Grande Sertão: Veredas" de Guimarães Rosa.</p>
+                        <div class="grupo-meta">
+                            <span><i class="fas fa-users"></i> 76 membros</span>
+                            <span><i class="fas fa-book"></i> 18 livros discutidos</span>
+                        </div>
+                        <div class="grupo-actions">
+                            <a href="#" class="btn btn-primary">Ver Grupo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre</h4>
+                <p>A Lit+ é uma plataforma dedicada a conectar leitores e promover o hábito da leitura.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="termos.html">Termos de Uso</a></li>
+                    <li><a href="privacidade.html">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Lit+. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html> 

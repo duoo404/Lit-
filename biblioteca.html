@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Biblioteca - Lit+</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Lit+</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="biblioteca.html" class="active">Minha Biblioteca</a>
+                <a href="explorar.html">Explorar</a>
+                <a href="grupos.html">Grupos</a>
+                <a href="perfil.html">Meu Perfil</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn">Entrar</a>
+                <a href="cadastro.html" class="btn btn-primary">Cadastrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="biblioteca-container">
+            <div class="biblioteca-header">
+                <h2>Minha Biblioteca</h2>
+                <div class="biblioteca-filtros">
+                    <button class="btn"><i class="fas fa-filter"></i> Filtrar</button>
+                    <select>
+                        <option value="todos">Todos os livros</option>
+                        <option value="lendo">Lendo atualmente</option>
+                        <option value="lidos">Lidos</option>
+                        <option value="quero-ler">Quero ler</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="biblioteca-tabs">
+                <button class="tab-btn active">Todos</button>
+                <button class="tab-btn">Lendo</button>
+                <button class="tab-btn">Lidos</button>
+                <button class="tab-btn">Quero ler</button>
+                <button class="tab-btn">Favoritos</button>
+            </div>
+
+            <div class="book-grid">
+                <div class="book-card">
+                    <div class="book-status lendo">Lendo</div>
+                    <img src="https://m.media-amazon.com/images/I/91YQ38BSpfL._AC_UF1000,1000_QL80_.jpg" alt="Capa do livro O Nome do Vento">
+                    <h3>O Nome do Vento</h3>
+                    <p>Patrick Rothfuss</p>
+                    <div class="book-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 65%"></div>
+                        </div>
+                        <span>65%</span>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-status lido">Lido</div>
+                    <img src="https://m.media-amazon.com/images/I/61Ks6-pBwgL._AC_UF1000,1000_QL80_.jpg" alt="Capa do livro 1984">
+                    <h3>1984</h3>
+                    <p>George Orwell</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-status quero-ler">Quero ler</div>
+                    <img src="https://m.media-amazon.com/images/I/71ZvnK+4JiL._AC_UF1000,1000_QL80_.jpg" alt="Capa do livro O Senhor dos Anéis">
+                    <h3>O Senhor dos Anéis</h3>
+                    <p>J.R.R. Tolkien</p>
+                </div>
+                <div class="book-card">
+                    <div class="book-status lido">Lido</div>
+                    <img src="https://m.media-amazon.com/images/I/81ym3QUd3KL._AC_UF1000,1000_QL80_.jpg" alt="Capa do livro Duna">
+                    <h3>Duna</h3>
+                    <p>Frank Herbert</p>
+                    <div class="book-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-status lendo">Lendo</div>
+                    <img src="https://m.media-amazon.com/images/I/51F7qpjV+sL._SY445_SX342_.jpg" alt="Capa do livro Admirável Mundo Novo">
+                    <h3>Admirável Mundo Novo</h3>
+                    <p>Aldous Huxley</p>
+                    <div class="book-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 30%"></div>
+                        </div>
+                        <span>30%</span>
+                    </div>
+                </div>
+                <div class="book-card">
+                    <div class="book-status quero-ler">Quero ler</div>
+                    <img src="https://m.media-amazon.com/images/I/61fZL+xIG4L._SY425_.jpg" alt="Capa do livro A Revolução dos Bichos">
+                    <h3>A Revolução dos Bichos</h3>
+                    <p>George Orwell</p>
+                </div>
+            </div>
+
+            <div class="adicionar-livro">
+                <button class="btn btn-primary"><i class="fas fa-plus"></i> Adicionar Livro</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre</h4>
+                <p>A Lit+ é uma plataforma dedicada a conectar leitores e promover o hábito da leitura.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="termos.html">Termos de Uso</a></li>
+                    <li><a href="privacidade.html">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Lit+. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html> 

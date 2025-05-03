@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Lit+</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Lit+</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="biblioteca.html">Minha Biblioteca</a>
+                <a href="explorar.html">Explorar</a>
+                <a href="grupos.html">Grupos</a>
+                <a href="perfil.html" class="active">Meu Perfil</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn">Entrar</a>
+                <a href="cadastro.html" class="btn btn-primary">Cadastrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="perfil-container">
+            <div class="perfil-header">
+                <div class="perfil-avatar">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto de perfil">
+                    <button class="editar-avatar"><i class="fas fa-camera"></i></button>
+                </div>
+                <div class="perfil-info">
+                    <h2>Julia Santos</h2>
+                    <p>@juliasantos</p>
+                    <p class="bio">Amante de livros, principalmente de fantasia e ficção científica. Sempre em busca da próxima grande história. Meus autores favoritos são Patrick Rothfuss, J.R.R. Tolkien e Frank Herbert.</p>
+                    <div class="perfil-stats">
+                        <div class="stat">
+                            <span class="stat-value">128</span>
+                            <span class="stat-label">Livros lidos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">47</span>
+                            <span class="stat-label">Avaliações</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">5</span>
+                            <span class="stat-label">Grupos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="perfil-actions">
+                    <button class="btn btn-primary"><i class="fas fa-edit"></i> Editar Perfil</button>
+                </div>
+            </div>
+
+            <div class="perfil-tabs">
+                <button class="tab-btn active">Atividade</button>
+                <button class="tab-btn">Avaliações</button>
+                <button class="tab-btn">Favoritos</button>
+                <button class="tab-btn">Estatísticas</button>
+                <button class="tab-btn">Configurações</button>
+            </div>
+
+            <div class="perfil-content">
+                <div class="atividade-feed">
+                    <h3>Atividade Recente</h3>
+                    
+                    <div class="atividade-item">
+                        <div class="atividade-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="atividade-content">
+                            <div class="atividade-header">
+                                <p><strong>Você</strong> começou a ler <strong>O Nome do Vento</strong></p>
+                                <p class="atividade-time">há 2 dias</p>
+                            </div>
+                            <div class="atividade-book">
+                                <img src="https://m.media-amazon.com/images/I/91YQ38BSpfL._AC_UF1000,1000_QL80_.jpg" alt="Capa do livro O Nome do Vento" class="atividade-book-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="atividade-item">
+                        <div class="atividade-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="atividade-content">
+                            <div class="atividade-header">
+                                <p><strong>Você</strong> avaliou <strong>1984</strong> com 4 estrelas</p>
+                                <p class="atividade-time">há 5 dias</p>
+                            </div>
+                            <div class="atividade-book">
+                                <img src="https://m.media-amazon.com/images/I/61Ks6-pBwgL._AC_UF1000,1000_QL80_.jpg" alt="Capa do livro 1984" class="atividade-book-cover">
+                                <div class="atividade-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="atividade-item">
+                        <div class="atividade-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="atividade-content">
+                            <div class="atividade-header">
+                                <p><strong>Você</strong> entrou no grupo <strong>Clube de Fantasia</strong></p>
+                                <p class="atividade-time">há 1 semana</p>
+                            </div>
+                            <div class="atividade-group">
+                                <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?q=80&w=1000&auto=format&fit=crop" alt="Imagem do grupo Clube de Fantasia" class="atividade-group-image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="atividade-item">
+                        <div class="atividade-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="atividade-content">
+                            <div class="atividade-header">
+                                <p><strong>Você</strong> terminou de ler <strong>Duna</strong></p>
+                                <p class="atividade-time">há 2 semanas</p>
+                            </div>
+                            <div class="atividade-book">
+                                <img src="https://m.media-amazon.com/images/I/81ym3QUd3KL._AC_UF1000,1000_QL80_.jpg" alt="Capa do livro Duna" class="atividade-book-cover">
+                                <div class="atividade-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="atividade-item">
+                        <div class="atividade-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="atividade-content">
+                            <div class="atividade-header">
+                                <p><strong>Você</strong> adicionou <strong>Os Sete Maridos de Evelyn Hugo</strong> à sua lista de leitura</p>
+                                <p class="atividade-time">há 3 semanas</p>
+                            </div>
+                            <div class="atividade-book">
+                                <img src="https://m.media-amazon.com/images/I/81dQwQlmAXL._AC_UF1000,1000_QL80_.jpg" alt="Capa do livro Os Sete Maridos de Evelyn Hugo" class="atividade-book-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre</h4>
+                <p>A Lit+ é uma plataforma dedicada a conectar leitores e promover o hábito da leitura.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="termos.html">Termos de Uso</a></li>
+                    <li><a href="privacidade.html">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Lit+. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html> 
