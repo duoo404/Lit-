@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lit+</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Lit+</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="biblioteca.html">Minha Biblioteca</a>
+                <a href="explorar.html">Explorar</a>
+                <a href="grupos.html">Grupos</a>
+                <a href="perfil.html">Meu Perfil</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn">Entrar</a>
+                <a href="cadastro.html" class="btn btn-primary">Cadastrar</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="quiz-section">
+    <h2>Quiz de Recomendações</h2>
+    <form id="quiz-form">
+        <p>1. Qual gênero literário você mais gosta?</p>
+        <label><input type="radio" name="genre" value="romantico" /> Romance</label><br />
+        <label><input type="radio" name="genre" value="investigador" /> Mistério / Thriller</label><br />
+        <label><input type="radio" name="genre" value="sonhador" /> Fantasia</label><br />
+        <label><input type="radio" name="genre" value="explorador" /> Ficção Científica</label><br />
+        <label><input type="radio" name="genre" value="realista" /> Não Ficção</label><br />
+        <label><input type="radio" name="genre" value="terror" /> Terror</label><br />
+        <label><input type="radio" name="genre" value="drama" /> Drama contemporâneo</label><br />
+
+        <p>2. Como você prefere o final do livro?</p>
+        <label><input type="radio" name="ending" value="romantico" /> Feliz</label><br />
+        <label><input type="radio" name="ending" value="realista" /> Triste ou impactante</label><br />
+        <label><input type="radio" name="ending" value="sonhador" /> Aberto / Interpretativo</label><br />
+        <label><input type="radio" name="ending" value="investigador" /> Surpreendente</label><br />
+
+        <p>3. Qual tema mais te atrai?</p>
+        <label><input type="radio" name="theme" value="romantico" /> Amor e relacionamentos</label><br />
+        <label><input type="radio" name="theme" value="romantico_realista_leve" /> Superação pessoal</label><br />
+        <label><input type="radio" name="theme" value="investigador" /> Crimes e investigações</label><br />
+        <label><input type="radio" name="theme" value="sonhador" /> Magia e mundos imaginários</label><br />
+        <label><input type="radio" name="theme" value="explorador" /> Viagens no tempo ou futuro</label><br />
+        <label><input type="radio" name="theme" value="realista" /> Histórias reais ou baseadas em fatos</label><br />
+
+        <p>4. Qual ambiente você prefere nos livros?</p>
+        <label><input type="radio" name="environment" value="realista" /> Cidades grandes / ambientes urbanos</label><br />
+        <label><input type="radio" name="environment" value="realista" /> Épocas históricas</label><br />
+        <label><input type="radio" name="environment" value="sonhador" /> Mundos mágicos / imaginários</label><br />
+        <label><input type="radio" name="environment" value="leve" /> Vida cotidiana / comum</label><br />
+
+        <p>5. Qual ritmo de leitura você prefere?</p>
+        <label><input type="radio" name="pace" value="investigador" /> Rápido e cheio de ação</label><br />
+        <label><input type="radio" name="pace" value="romantico" /> Moderado com reviravoltas</label><br />
+        <label><input type="radio" name="pace" value="realista" /> Lento e reflexivo</label><br />
+
+        <p>6. Você prefere protagonistas que são:</p>
+        <label><input type="radio" name="protagonist" value="explorador" /> Forte e resiliente</label><br />
+        <label><input type="radio" name="protagonist" value="realista" /> Comuns e próximos da realidade</label><br />
+        <label><input type="radio" name="protagonist" value="sonhador" /> Extraordinários ou mágicos</label><br />
+
+        <p>7. Qual o tamanho ideal de livro para você?</p>
+        <label><input type="radio" name="size" value="leve" /> Curto (até 200 páginas)</label><br />
+        <label><input type="radio" name="size" value="romantico" /> Médio (200-400 páginas)</label><br />
+        <label><input type="radio" name="size" value="explorador" /> Longo (mais de 400 páginas)</label><br />
+
+        <button type="button" class="button-recomendacao" onclick="getRecommendation()">Ver Recomendações</button>
+    </form>
+    </div>
+
+    <div id="result" class="recommendation" style="display: none;">
+    <h3>Seu Perfil Literário:</h3>
+    <p id="profile-name"></p>
+    <p id="profile-description"></p>
+    <h3>Recomendações de Livros:</h3>
+    <ul id="book-list"></ul>
+    </div>
+
+<script>
+    function getRecommendation() {
+        const form = document.getElementById('quiz-form');
+        const elements = form.elements;
+        const scores = {
+            sonhador: 0,
+            investigador: 0,
+            romantico: 0,
+            realista: 0,
+            explorador: 0,
+            leve: 0
+        };
+
+        function addScore(value) {
+            if(value === "romantico_realista_leve"){
+                scores.romantico += 1;
+                scores.realista += 1;
+                scores.leve += 1;
+            } else {
+                if(scores.hasOwnProperty(value)){
+                    scores[value] += 2;
+                } else {
+                    
+                    if(value === "terror") {
+                        scores.investigador += 1;
+                        scores.explorador += 1;
+                    } else if(value === "drama") {
+                        scores.romantico += 1;
+                        scores.realista += 1;
+                        scores.leve += 1;
+                    }
+                }
+            }
+        }
+
+        const requiredFields = ['genre','ending','theme','environment','pace','protagonist','size'];
+        for(let i=0; i<requiredFields.length; i++){
+            if(!form.querySelector(`input[name="${requiredFields[i]}"]:checked`)){
+                alert('Por favor, responda todas as perguntas antes de ver as recomendações.');
+                return;
+            }
+        }
+
+        // Add scores from answers
+        addScore(form.querySelector('input[name="genre"]:checked').value);
+        addScore(form.querySelector('input[name="ending"]:checked').value);
+        addScore(form.querySelector('input[name="theme"]:checked').value);
+        addScore(form.querySelector('input[name="environment"]:checked').value);
+        addScore(form.querySelector('input[name="pace"]:checked').value);
+        addScore(form.querySelector('input[name="protagonist"]:checked').value);
+        addScore(form.querySelector('input[name="size"]:checked').value);
+
+        // Determine highest scoring profile(s)
+        let maxScore = 0;
+        for(const key in scores){
+            if(scores[key] > maxScore) maxScore = scores[key];
+        }
+        // Get all profiles with maxScore in case of tie
+        const topProfiles = Object.keys(scores).filter(key => scores[key] === maxScore);
+
+        // Prepare profile descriptions and recommendations
+        const profiles = {
+            sonhador: {
+                name: "Sonhador Fantástico",
+                description: "Você gosta de fantasia, mundos mágicos e finais abertos.",
+                books: [
+                    "O Nome do Vento",
+                    "Sombra e Ossos",
+                    "O Senhor dos Anéis"
+                ]
+            },
+            investigador: {
+                name: "Investigador Misterioso",
+                description: "Você gosta de mistério, crime e ação.",
+                books: [
+                    "Garota Exemplar",
+                    "A Paciente Silenciosa",
+                    "Millennium"
+                ]
+            },
+            romantico: {
+                name: "Romântico Sensível",
+                description: "Você gosta de romance, emoções e finais felizes ou tristes.",
+                books: [
+                    "Um Dia",
+                    "Como Eu Era Antes de Você",
+                    "Eleanor & Park"
+                ]
+            },
+            realista: {
+                name: "Realista Reflexivo",
+                description: "Você gosta de histórias reais, críticas sociais e ritmo lento.",
+                books: [
+                    "Torto Arado",
+                    "O Sol é Para Todos",
+                    "Pequeno Manual Antirracista"
+                ]
+            },
+            explorador: {
+                name: "Explorador do Futuro",
+                description: "Você gosta de ficção científica e protagonistas fortes.",
+                books: [
+                    "1984",
+                    "Admirável Mundo Novo",
+                    "Kindred"
+                ]
+            },
+            leve: {
+                name: "Leitor Leve",
+                description: "Você gosta de leituras cotidianas, fluidas e emocionalmente leves.",
+                books: [
+                    "O Diário de Bridget Jones",
+                    "Extraordinário",
+                    "A Culpa é das Estrelas"
+                ]
+            }
+        };
+
+        let profileName = topProfiles.map(p => profiles[p].name).join(' / ');
+        let profileDesc = topProfiles.map(p => profiles[p].description).join(' / ');
+        let allBooks = [];
+        topProfiles.forEach(p => {
+            allBooks = allBooks.concat(profiles[p].books);
+        });
+
+        allBooks = [...new Set(allBooks)];
+
+        document.getElementById('profile-name').innerText = profileName;
+        document.getElementById('profile-description').innerText = profileDesc;
+
+        const bookList = document.getElementById('book-list');
+        bookList.innerHTML = '';
+        allBooks.forEach(book => {
+            let li = document.createElement('li');
+            li.textContent = book;
+            bookList.appendChild(li);
+        });
+
+        document.getElementById('result').style.display = 'block';
+        
+        document.getElementById('result').scrollIntoView({behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>
+
